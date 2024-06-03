@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+</head>
+<body>
+    <h1>Cadastro do livro</h1>
+    <form action="formulariofim.html" method="get">
+        <fieldset>
+            <legend><h2>Informações do autor</h2></legend>
+            <label for="Nomelivro">Nome do Livro</label><br>
+            <input type="text" id="Nomelivro" name="Nomelivro" placeholder="titulo"><br>
+            <label for="Autor">Autor</label><br>
+            <input type="text" id="Autor" name="Autor" placeholder="nome"><br>
+            <label for="classificação">classificação</label><br>
+            <input type="text" id="facha etaria" name="facha itaria" placeholder="livre/+16"><br>
+        </fieldset>
+        <br>
+        <br>
+        <fieldset>
+            <legend><h2>Cadastro do autor</h2></legend>
+            <label for="Nomecompleto">Nome Completo</label><br>
+            <input type="text" id="Nomelivro" name="Nome" placeholder="nome"><br>
+            <label for="CPF">CPF</label><br>
+            <input type="text" name="cpf" \
+            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
+            title="Digite um CPF no formato: xxx.xxx.xxx-xx">
+            <input type="submit" value="Verificar"><br>
+       
+           
+            <label for="endereco_email">Email</label><br>
+            <input type="email" id="endereco_email" placeholder="ex: Ana.Cast@hotmail.com"><br>
+            <label for="Nascimento">Data Nascimento</label><br>
+            <input type="date" id="Nascimento"><br>
+        </fieldset>
+        <fieldset>
+            <legend><h2>Categoria do livro</h2></legend>
+           
+            <input type="radio" id="Ação" name="class">
+            <label for="css">Ação</label><br>
+            <input type="radio" id="terror" name="class">
+            <label for="css">terror</label><br><input type="radio" id="Ação" name="class">
+            <label for="css">ficção</label><br>
+            <input type="radio" id="ficção" name="class">
+            <label for="javascript">Romance</label><br>
+            <input type="radio" id="Fatos Reais" name="class">
+            <label for="Livre">Fatos Reais</label><br>
+            <label for="descricao"><p>Deixe uma descrição</p></label>
+            <textarea id="descricao" rows="8" cols="40"></textarea><br>
+            </select>
+        </fieldset><br>
+        <input type="submit" value="Enviar"><br><br>
+        <input type="reset" value=" limpar ">
+       
+      </form>        
+</body>
+</html>
