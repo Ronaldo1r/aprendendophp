@@ -1,15 +1,15 @@
-function formhas(from,password){
+function formhas(from, password) {
     // cria um novo elemento de input, o qual será o campo para a senha com  hosh.
     var p = document.createElement ("input");
 
     // Adicione um novo elemento ao nosso formulario.
     form.appendChild(p);
-    p.nome="p";
-    p.type="hidden";
-    p.value=hex_sha512(password.value);
+    p.nome = "p";
+    p.type = "hidden";
+    p.value = hex_sha512(password.value);
 
     //Cuidado para não deixar que senha em texto simples não seja enviado.
-    password.value="";
+    password.value = "";
 
     //Finalmente, envie o formulário
     form.submit();
@@ -17,7 +17,7 @@ function formhas(from,password){
 
 function regformhash(form, uid, email, password, conf) {
     // Confira se cada campo tem um valor
-    if(uid.value == ''           ||           
+    if (uid.value == ''           ||           
     email.value == ''      ||           
     password.value == ''  ||           
     conf.value == '') {
@@ -29,8 +29,8 @@ function regformhash(form, uid, email, password, conf) {
      re = /^\w+$/;
      if(!re.test(form.username.value)) {         
         alert("Username must contain only letters, numbers and underscores. Please try again");         
-        form.username.focus()
-        ;return false;
+        form.username.focus();
+        return false;
          }
          
          // Confira se a senha é comprida o suficiente (no mínimo, 6 caracteres)
@@ -39,7 +39,8 @@ function regformhash(form, uid, email, password, conf) {
          if (password.value.length < 6) {        
             alert('Passwords must be at least 6 characters long.  Please try again');        
             form.password.focus();
-            return false;    }
+            return false;    
+        }
             // Pelo menos um número, uma letra minúscula e outra maiúscula 
             // Pelo menos 6 caracteres 
             var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/; 

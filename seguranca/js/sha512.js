@@ -1,3 +1,4 @@
+sha512.js
 /*
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-512, as defined
  * in FIPS 180-2
