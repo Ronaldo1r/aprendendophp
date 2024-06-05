@@ -1,6 +1,6 @@
 <?php
 
-include_once 'includes/functions.php';
+include_once 'functions.php';
 
 sec_sessiom_start();
 

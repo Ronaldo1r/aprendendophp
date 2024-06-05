@@ -1,6 +1,7 @@
 <?php
 include_once 'db_connect.php';
 include_once 'psl-config.php';
+
 $error_msg = "";
 if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     // Limpa e valida os dados passados em     
@@ -41,7 +42,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     // realizar a operação.     
     if (empty($error_msg)) {
         // Crie um salt aleatório        
-        $random_salt = hash('sha512', uniqid(openssl_random_pseudo_bytes(  16), TRUE));
+        $random_salt = hash('sha512', uniqid(openssl_random_pseudo_bytes(16), TRUE));
         
         // Crie uma senha com salt         
         $password = hash('sha512', $password . $random_salt);

@@ -6,7 +6,7 @@ include_once 'functions.php';
 
 sec_session_start(); // Nossa segurança personalizada para iniciar uma sessão php
 
-if(isset($_POST['email'],$_POST['p'])){
+if (isset($_POST['email'], $_POST['p'])){
 
     $email = $_POST['email'];    
     $password = $_POST['p']; // The hashed password.
@@ -20,7 +20,7 @@ if(isset($_POST['email'],$_POST['p'])){
     }
 } else {
     // As variáveis POST corretas não foram enviadas para esta página.
-         echo 'Invalid Request' (Requisição Inválida);
+         echo 'Invalid Request';
         }
 
         
