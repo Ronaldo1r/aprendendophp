@@ -1,6 +1,8 @@
-<!DOCTYPE html><html>    
+<!DOCTYPE html>
+<html lang="pt-br">   
     <head>        
-        <meta charset="UTF-8">        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <title>Secure Login: Registration Success</title>        
         <link rel="stylesheet" href="styles/main.css" />     
     </head>    

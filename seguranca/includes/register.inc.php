@@ -3,16 +3,21 @@ include_once 'db_connect.php';
 include_once 'psl-config.php';
 
 $error_msg = "";
-if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
+
+if (isset($_POST['username'], $_POST['email'], $_POST['p'])) 
+{
     // Limpa e valida os dados passados em     
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);    
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);    
-    $email = filter_var($email, FILTER_VALIDATE_EMAIL);     
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+    {
         // Email inválido        
-        $error_msg .= '<p class="error">O endereço de email digitado não é válido</p>';    
+        $error_msg .= '<p class="error"> O endereço de email digitado não é válido</p>';    
     }    
-    $password = filter_input(INPUT_POST, 'p', FILTER_SANITIZE_STRING);     
+    $password = filter_input(INPUT_POST, 'p', FILTER_SANITIZE_STRING);
+
     if (strlen($password) != 128) {
         // A senha com hash deve ter 128 caracteres.
         // Caso contrário, algo muito estranho está acontecendo        
@@ -24,15 +29,19 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
     //    
     $prep_stmt = "SELECT id FROM members WHERE email = ? LIMIT 1";
         $stmt = $mysqli->prepare($prep_stmt);     
-        if ($stmt) {
+        if ($stmt) 
+        {
 
             $stmt->bind_param('s', $email);
             $stmt->execute();        
-            $stmt->store_result();          
-            if ($stmt->num_rows == 1) {
+            $stmt->store_result();
+
+            if ($stmt->num_rows == 1) 
+            {
                 // Um usuário com esse email já esixte            
             $error_msg .= '<p class="error">A user with this email address already exists.</p>';        
-        }    
+        } 
+           
     } else {        
         $error_msg .= '<p class="error">Database error</p>';    
     }
